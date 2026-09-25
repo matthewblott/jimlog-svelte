@@ -1,42 +1,33 @@
-# sv
+# Jimlog
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A Gym logging application built using the following technologies:
+- [SvelteKit](https://github.com/sveltejs/kit)
+- [Goose](https://github.com/pressly/goose)
+- [Bun](https://github.com/oven-sh/bun)
+- [Make](https://www.gnu.org/software/make/)
 
-## Creating a project
+## Getting started
 
-If you're seeing this, you've probably already done this step. Congrats!
+You will need the `make` build tool installed along with `bun`.
 
-```sh
-# create a new project
-npx sv create my-app
+To see a list of the available `make` commands run `make help`.
+
+Install the dependencies with `bun`:
+```bash
+bun install
+
+make db-reset
+make dev
 ```
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-bun x sv@0.16.1 create --template minimal --types ts --install bun gym
+Setup the database and run the migrations:
+```
+make db-reset
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+Then run the server:
+```
+make dev
 ```
 
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+The application will now be running on `http://localhost:5173`.
